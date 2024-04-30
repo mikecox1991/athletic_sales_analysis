@@ -1,16 +1,12 @@
 # athletic_sales_analysis
 Module 5 
-1. Combine and Clean the Data
+Combine and Clean the Data
 ----------------------------------------------------------------------------------------------------------------
 This module was difficult for me at first but we got through this! The beginning of the code
 we import the CSV files in and start with read_csv. After we see the data for sales_2020_df 
 and sales_2021_df we see what we are looking at as far as the table data. 
-
-CHECK THE DATA TYPES OF EACH DataFrame
 Here we are looking at the types of data we are using for both tables with .dtypes, we see invoice_date
 is an object and not a 'datetime' data type. 
-
-COMBINE THE SALES DATA BY ROWS.
 We are combining our dataframes together, using concat to combine both sales_2020_df and sales_2021_df
 into one table. We ignore the index and then reset_index to look at our new index column. I looked at .head(20)
 to look at the first 20 rows of data for myself. We check if there are any null columns in the combined tables,
@@ -18,7 +14,7 @@ which I did not see anything. The next three steps are verify invoice_date data 
 type to datetime using pd.to_datetime. Then confirm the data type took and we see invoice_date 'datetime64[ns]'
 which is correct for us.
 
-2. Determine Which Region Sold the Most Products
+Determine Which Region Sold the Most Products
 ----------------------------------------------------------------------------------------------------------------
 This was a good exercise for these next couple sections because its repetitive using the .pivot_table and 
 .groupby functions and reinforcing our knowledge of how to use these corrctly. For this section we are 
@@ -28,7 +24,7 @@ in descending order and print top 5 results. We do the same exact sequence but w
 table up using index to region, state, city. Values to units_sold and aggfunc to sum. We rename units sold and 
 then sort_values by descending order and print. 
 
-3. Determine Which Region had the Most Sales
+Determine Which Region had the Most Sales
 ----------------------------------------------------------------------------------------------------------------
 This is the same sequence as previous, we start the section by using .groupby using the index of region, state,
 city; .agg to find the sum of total sales. we .rename total_sales to Total_Sales, sort_values using total_sales
@@ -36,7 +32,7 @@ and print the top five results. The same thing happens with the pivot table, use
 region, city, state and aggfunc as sum. we rename the column and then sort_values of Total_Sales then 
 descending order and print top 5 results.
 
-4. Determin Which Region had the Most Sales
+Determin Which Region had the Most Sales
 ----------------------------------------------------------------------------------------------------------------
 Here we do the samething determine which retailer has the most sales. We add retailer into the index with region, 
 state, city then we find the sum of all the values with the agg function. Rename the columns of total sales to 
